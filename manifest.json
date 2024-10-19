@@ -1,0 +1,14 @@
+{
+    "domain": "inverter_monitor",
+    "name": "Inverter Monitor",
+    "version": "1.0.0",
+    "documentation": "https://github.com/your_repo",
+    "requirements": [],
+    "dependencies": [],
+    "after_dependencies": [],
+    "codeowners": ["@your_github_handle"],
+    "integration_type": "addon",
+    "iot_class": "local_polling",
+    "components": ["sensor"],
+    "components": ["inverter_monitor.sensors"]
+}

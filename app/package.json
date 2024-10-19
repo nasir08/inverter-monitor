@@ -1,0 +1,16 @@
+{
+  "name": "inverter-monitor",
+  "version": "1.0.0",
+  "description": "Home Assistant add-on to monitor inverters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nasir Ayofe",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1",
+    "serialport": "^12.0.0"
+  }
+}

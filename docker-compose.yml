@@ -1,0 +1,24 @@
+services:
+  nodejs-app:
+    build: ./app
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/inverter-monitor # Pass MongoDB URI
+      - SERIAL_PORT=/dev/ttyUSB0 # The serial port inside the container
+      - BAUD_RATE=9600 # Baud rate for serial communication
+    depends_on:
+      - mongodb
+    ports:
+      - "80:80" # Node.js app port
+    # devices:
+    #   - "/dev/tty.usbserial-FTB6SPL3:/dev/ttyUSB0" # Map host serial port to container serial port
+    privileged: true # To access the serial port
+    volumes:
+      - ./app:/usr/src/app # Your app files
+      - /dev:/dev # Give container access to devices (for serial port)
+
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - ./data/db:/data/db # Persist MongoDB data on the host
+    ports:
+      - "27018:27017" # Expose MongoDB to external accesss

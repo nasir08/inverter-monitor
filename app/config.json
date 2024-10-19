@@ -1,0 +1,24 @@
+{
+  "name": "Inverter Monitor",
+  "version": "1.0.0",
+  "slug": "inverter_monitor",
+  "description": "Home Assistant add-on to monitor inverters",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "services",
+  "hassio_api": true,
+  "homeassistant_api": true,
+  "host_network": true,
+  "map": ["config", "ssl", "share", "addons", "backup"],
+  "options": {
+    "port": "/dev/tty.usbserial-FTB6SPL3",
+    "baud_rate": 9600,
+    "mongodb_uri": "mongodb://mongodb:27017/inverter-monitor"
+  },
+  "schema": {
+    "port": "str",
+    "baud_rate": "int",
+    "mongodb_uri": "str"
+  },
+  "devices": ["/dev/tty.usbserial-FTB6SPL3:/dev/ttyUSB0:rwm"]
+}
+  
